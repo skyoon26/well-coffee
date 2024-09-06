@@ -1,13 +1,9 @@
 package com.team_lightyear.WellCoffeeInventoryAPI.models;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -19,10 +15,6 @@ import java.util.Objects;
  */
 
 @Entity
-//Tells hibernate how to identify objects
-@JsonIdentityInfo(
-        generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "id")
 public class Category {
 
     @Id
@@ -32,10 +24,7 @@ public class Category {
     @NotBlank(message = "Name is required")
     @Size(min = 3, max = 50, message = "Must be between 3 and 50 characters")
     private String name;
-    
-    //FetchMode.SELECT uses the JSON Identity information (annotated above the class) to stop retrieving objects in a
-    // recursive manner. If the object has already been retrieved once, it just passes a
-    // reference (the id) into the JSON file and doesn't retrieve the whole object
+
     @OneToMany (mappedBy = "category", cascade = CascadeType.ALL)
     @JsonIgnore
     private final List<Item> items = new ArrayList<>();
