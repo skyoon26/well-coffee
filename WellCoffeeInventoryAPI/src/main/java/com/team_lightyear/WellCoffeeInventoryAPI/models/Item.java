@@ -14,7 +14,7 @@ import java.util.*;
  */
 
 @Entity
-//Tells hibernate how to identify objects
+// Jackson will manage object identity during serialization and deserialization using the value of the id property to avoid infinite loops
 @JsonIdentityInfo(
         generator = ObjectIdGenerators.PropertyGenerator.class,
         property = "id")
@@ -37,6 +37,7 @@ public class Item {
     private String amazonProductId;
 
     @Lob // Specifies that the database should store this as a Large Object
+    @Column(name="image", columnDefinition="LONGTEXT")
     private String image;
 
     @ManyToOne
