@@ -11,26 +11,24 @@ function Register() {
     // const [role, setRole] = useState("");
 
     const handleRegister = async (e) => {
-        e.preventDefault();
+      e.preventDefault();
 
-        try {
-            const response = await axios.post("http://localhost:8080/api/register", 
-            {
-                firstName,
-                lastName,
-                email,
-                password,
-                role: "employee"
-            },
-            {
-                withCredentials: true,
-            }
-            );
-
-            setMessage(response.data.message);
-        } catch (error) {
-            setMessage(error.response?.data?.message || "Registration failed");
-        }
+      try {
+        const response = await axios.post("http://localhost:8080/api/register", 
+        {
+          firstName,
+          lastName,
+          email,
+          password,
+          role: "employee"
+        },
+        {
+          withCredentials: true,
+        });
+        setMessage(response.data.message);
+      } catch (error) {
+        setMessage(error.response?.data?.message || "Registration failed");
+      }
     };
 
     return (
