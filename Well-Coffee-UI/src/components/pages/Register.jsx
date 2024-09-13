@@ -1,6 +1,7 @@
 import axios from "axios";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Container, Button, Row, Col, Form, Card } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
   const [email, setEmail] = useState("");
@@ -29,6 +30,8 @@ function Register() {
       setMessage(error.response?.data?.message || "Registration failed");
     }
   };
+
+  const navigate = useNavigate();
 
   return (
     <Container className="mt-5">
@@ -85,9 +88,18 @@ function Register() {
               {message && <p>{message}</p>}
             </Card.Body>
           </Card>
+          <Button
+            className="mt-2"
+            variant="outline-secondary" 
+            onClick={() => {
+              navigate("/login");
+            }}
+          >
+            Go to Login
+          </Button>
         </Col>
       </Row>
-    </Container>             
+    </Container>
   )
 }
 
