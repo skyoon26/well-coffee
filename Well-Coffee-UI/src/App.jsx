@@ -29,13 +29,13 @@ function App() {
             </>
           ) : (
             <>
-              <Route path="/home" element={<HomePage />} />
+              <Route path="/" element={<HomePage />} />
               <Route path="/order" element={<OrderFormPage />} />
               <Route path="/amazon" element={<AmazonSearchHome />} />
               <Route path="/manage" element={<ManageEmployees />} />
               <Route path="/search" element={<SearchPage />} />
               <Route path="/logout" element={<LogoutPage setAuthenticated={setAuthenticated} />} />
-              <Route path="*" element={<Navigate to="/home" />} />
+              <Route path="*" element={<Navigate to="/" />} />
             </>
           )}
         </Routes>

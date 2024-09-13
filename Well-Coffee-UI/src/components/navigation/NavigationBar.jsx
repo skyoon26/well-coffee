@@ -14,7 +14,7 @@ const NavigationBar = ({ authenticated }) => {
           <Navbar.Collapse className='mx-3'>
             {authenticated ? (
               <Nav className='ml-auto text-start nav-links'>
-                <Nav.Link as={Link} to={"/home"}>Home</Nav.Link>
+                <Nav.Link as={Link} to={"/"}>Home</Nav.Link>
                 <Nav.Link as={Link} to={"/order"}>Make an Order</Nav.Link>
                 <Nav.Link as={Link} to={"/manage"}>Manage Employees</Nav.Link>
                 <Nav.Link as={Link} to={"/search"}>Search</Nav.Link>
