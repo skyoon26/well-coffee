@@ -7,7 +7,7 @@ import HomePage from "./components/pages/HomePage";
 import OrderFormPage from "./components/orderForm/OrderFormPage";
 import ManageEmployees from "./components/pages/ManageEmployees";
 import AmazonSearchHome from "./components/amazonAPI/ItemSearch/AmazonSearchHome";
-import LoginPage from "./components/pages/LoginPage";
+import SignInPage from "./components/pages/SignInPage";
 import Register from "./components/pages/Register";
 import LogoutPage from "./components/pages/LogoutPage";
 import SearchPage from "./components/pages/SearchPage";
@@ -23,9 +23,9 @@ function App() {
         <Routes>
           {!authenticated ? (
             <>
-            <Route path="/login" element={<LoginPage setAuthenticated={setAuthenticated} />} />
+            <Route path="/sign-in" element={<SignInPage setAuthenticated={setAuthenticated} />} />
             <Route path="/register" element={<Register />} />
-            <Route path="*" element={<Navigate to="/login" />} />
+            <Route path="*" element={<Navigate to="/sign-in" />} />
             </>
           ) : (
             <>

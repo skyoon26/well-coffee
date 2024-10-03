@@ -8,7 +8,7 @@ const NavigationBar = ({ authenticated }) => {
     <>
      <Navbar className='nav' bg="dark" data-bs-theme="dark" sticky='top' expand='sm' collapseOnSelect>
           <Navbar.Brand>
-            <Nav.Link as={Link} to={"/home"}><img src={logo} width='200px' height='30px' /></Nav.Link>
+            <Nav.Link as={Link} to={"/"}><img src={logo} width='200px' height='30px' /></Nav.Link>
           </Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse className='mx-3'>
@@ -23,7 +23,7 @@ const NavigationBar = ({ authenticated }) => {
               </Nav>
             ) : (
             <Nav className='ml-auto nav-links'>
-              <Nav.Link as={Link} to={"/login"}>Login</Nav.Link>
+              <Nav.Link as={Link} to={"/sign-in"}>Sign In</Nav.Link>
               <Nav.Link as={Link} to={"/register"}>Register</Nav.Link>
 
             </Nav>

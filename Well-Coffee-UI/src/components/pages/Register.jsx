@@ -41,62 +41,64 @@ function Register() {
             <Card.Body>
               <h1 className="text-center mb-4">Register</h1>
               <Form onSubmit={handleRegister}>
-                <Form.Group className="mb-3" controlId="firstName">
-                  <Form.Label>First Name</Form.Label>
+                <Form.Group className="my-4" controlId="firstName">
                   <Form.Control
                     type="text"
                     placeholder="Enter first name"
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
                     required
+                    autoComplete='off'
                   />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="lastName">
-                  <Form.Label>Last Name</Form.Label>
+                <Form.Group className="my-4" controlId="lastName">
                   <Form.Control
                     type="text"
                     placeholder="Enter last name"
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
                     required
+                    autoComplete='off'
                   />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="email">
-                  <Form.Label>Email</Form.Label>
+                <Form.Group className="my-4" controlId="email">
                   <Form.Control
                     type="email"
                     placeholder="Enter email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
+                    autoComplete='off'
                   />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="password">
-                  <Form.Label>Password</Form.Label>
+                <Form.Group className="my-4" controlId="password">
                   <Form.Control
                     type="password"
                     placeholder="Enter password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
+                    autoComplete='off'
                   />
                 </Form.Group>
-                <Button variant="primary" type="submit" className="w-100">
-                  Register
-                </Button>
+                <div className="d-flex justify-content-center">
+                  <Button variant="primary" type="submit" className="flex-fill me-2">
+                    Register
+                  </Button>
+                  <Button
+                    className="flex-fill"
+                    variant="secondary" 
+                    onClick={() => {
+                      navigate("/sign-in");
+                    }}
+                  >
+                    Return
+                  </Button>
+                </div>
               </Form>
               {message && <p>{message}</p>}
             </Card.Body>
           </Card>
-          <Button
-            className="mt-2"
-            variant="outline-secondary" 
-            onClick={() => {
-              navigate("/login");
-            }}
-          >
-            Go to Login
-          </Button>
         </Col>
       </Row>
     </Container>
