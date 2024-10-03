@@ -56,7 +56,7 @@ const AmazonSearchForm = ({
     <Container className="mt-3">
       <Form onSubmit={handleSubmit} id="AmazonSearchForm">
         <Row>
-          <Col>
+          <Col className="mb-2">
             <Form.Group controlId="searchTerm">
               <Form.Control
                 type="text"
